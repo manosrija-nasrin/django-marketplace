@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 import dj_database_url
 from pathlib import Path
 
@@ -21,10 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r4x#0d$r1z@g-z0w+e^iiyz686%_rg=9p35=uu2179^rv46)$z'
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'r4x#0d$r1z@g-z0w+e^iiyz686%_rg=9p35=uu2179^rv46)$z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 # For example, for a site URL at 'web-production-3640.up.railway.app'
 # (replace the string below with your own site URL):
