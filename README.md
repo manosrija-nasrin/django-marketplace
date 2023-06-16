@@ -13,7 +13,7 @@ Due for upgrades
 
 ### Usage
 
-In order to download this code, either click the green button at the top right and download as ZIP, or clone the repository. You will need to `pip install -r requirements.txt` (or use `pip3` if you are getting a module not found error).
+In order to download this code, either click the green button at the top right and download as ZIP, or clone the repository. Enter the repository directory. You will need to `pip install -r requirements.txt` (or use `pip3` if you are getting a module not found error).
 
 In the folder, you will find these sub-folders:
 
@@ -23,12 +23,18 @@ In the folder, you will find these sub-folders:
 - item: contains details about items and their categories. A user can filter the items based on category as well as search for items.
 - conversation: handles conversation between a logged-in user and seller(s)
 
+Run the following in your terminal.
+
+```
+python3 manage.py runserver
+```
+
 ### Notes
 
 - Add an "add to cart" function
 - Adjust the precision of floating-point fields so that 250.0 is displayed as 250.00
 - Display currency symbol
-- Integrate a payment gateway so that users are able to checkout and pay for the items
+- Integrate a payment gateway API so that users are able to checkout and pay for the items
 
 ### Credits
 
